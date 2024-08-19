@@ -1,0 +1,13 @@
+/* Custom container class */
+.container-custom {
+  max-width: 1480px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Debug class for development */
+.debug {
+  border: 2px solid #f87171;
+}
