@@ -102,14 +102,14 @@ const Courses = () => {
                     <Slider ref={sliderRef} {...settings}>
                         {courses.map((course, index) => (
                             <div key={index} className="p-4">
-                                <div className={`bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-all duration-300 relative flex flex-col min-h-80 lg:min-h-[520px] ${
+                                <div className={`bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 relative flex flex-col min-h-80 lg:min-h-[520px] ${
                                     index !== activeSlide ? 'opacity-50 lg:opacity-100' : ''
-                                }`}>
-                                    <div className="relative">
+                                } hover:scale-105`}>
+                                    <div className="relative group hover:scale-105 transition-transform duration-300">
                                         <img src={course.bg} className="w-full h-60 object-cover" alt={course.title} />
-                                        <div className="absolute inset-0 flex items-center justify-center bg-opacity-25 hover:bg-opacity-75 transition-all duration-300">
-                                            <button className="bg-white hover:bg-secondary p-4 rounded-full shadow-lg transition-colors duration-300 group">
-                                                <BsPlayFill className="h-8 w-8 text-secondary transition-colors duration-300 group-hover:text-white" />
+                                        <div className="absolute inset-0 flex items-center justify-center bg-opacity-25 hover:bg-opacity-75 transition-opacity duration-300">
+                                            <button className="bg-white hover:bg-secondary p-4 rounded-full shadow-lg transition-colors duration-300">
+                                                <BsPlayFill className="h-8 w-8 text-secondary group-hover:text-white" />
                                             </button>
                                         </div>
                                     </div>
