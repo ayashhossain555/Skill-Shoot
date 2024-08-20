@@ -6,39 +6,44 @@ import pyramidIcon from '../../assets/images/pyramid_icon.svg';
 import squareIcon from '../../assets/images/square_icon.svg';
 
 const Expertise = () => {
+    // Data for stats
     const stats = [
         { value: "100+", label: "Updated Material" },
         { value: "15K", label: "Member Join" },
     ];
 
+    // Data for challenges
     const challenges = [
         {
             icon: squareIcon,
             title: "Material Limitations",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Limited access to quality resources can hinder the learning process.",
         },
         {
             icon: pyramidIcon,
             title: "Unprofessional Mentor",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Guidance from inexperienced mentors can lead to poor outcomes.",
         },
         {
             icon: circleIcon,
             title: "Video Quality",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Low-quality instructional videos can reduce comprehension and retention.",
         },
         {
             icon: yellowIcon,
             title: "High Price",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Expensive courses can make education inaccessible to many learners.",
         },
     ];
 
     return (
-        <div className="container-custom py-16 font-poppins">
+        // Main container for the Expertise section
+        <div className="container-custom mb-28 font-poppins">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-32">
+                
+                {/* Left section with text and stats */}
                 <div className='w-full flex flex-col items-center text-center lg:text-left lg:items-start lg:w-1/2 space-y-8'>
-                    <h2 className="text-2xl lg:text-4xl font-bold mb-4">
+                    <h2 className="text-heading-mobile lg:text-heading-desktop font-bold">
                         Why do we <span className="text-primary">exist?</span>
                     </h2>
                     <p className="text-gray-500 mb-6 text-sm lg:text-base leading-normal lg:leading-relaxed">
@@ -61,6 +66,8 @@ const Expertise = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* Right section with challenges */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mt-8 lg:mt-0">
                     {challenges.map((challenge, index) => (
                         <div key={index} className="flex flex-col text-center lg:text-left items-center lg:items-start space-y-7">

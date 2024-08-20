@@ -70,8 +70,10 @@ const Review = () => {
     return (
         <div className="bg-[#F8F8F8] py-16 font-poppins">
             <div className="container-custom">
+                
+                {/* Section Header */}
                 <div className="text-center mb-12 relative">
-                    <h2 className="text-lg lg:text-4xl font-semibold mb-4">
+                    <h2 className="text-heading-mobile lg:text-heading-desktop font-semibold mb-4">
                         What do they <span className="text-primary">say?</span>
                     </h2>
                     <p className="text-gray-500 text-xs lg:text-base px-12">
@@ -80,6 +82,8 @@ const Review = () => {
                     <img src={reviewSquare} className="absolute top-0 left-10 w-7 h-7 lg:hidden" alt="Square Icon" />
                     <img src={reviewCircle} className="absolute top-4 right-10 w-4 h-4 lg:hidden" alt="Circle Icon" />
                 </div>
+
+                {/* Slider with Reviews */}
                 <Slider ref={sliderRef} {...settings}>
                     {reviews.map((review, index) => (
                         <div key={index} className="p-4">
@@ -98,6 +102,8 @@ const Review = () => {
                         </div>
                     ))}
                 </Slider>
+
+                {/* Slider Controls */}
                 <div className="flex justify-center mt-6">
                     <div className="flex space-x-6">
                         <button 

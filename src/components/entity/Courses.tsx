@@ -77,19 +77,24 @@ const Courses = () => {
         }
     ];
 
+    // Function to go to the next slide
     const goToNext = () => {
         sliderRef.current.slickNext();
     };
 
+    // Function to go to the previous slide
     const goToPrev = () => {
         sliderRef.current.slickPrev();
     };
 
     return (
+        // Main container for the Courses section
         <div className="bg-secondary py-16 font-poppins overflow-visible">
             <div className="overflow-visible relative">
+                
+                {/* Header Section */}
                 <div className="container-custom text-center mb-12 relative overflow-visible">
-                    <h2 className="text-xl lg:text-4xl font-semibold text-white mb-4">
+                    <h2 className="text-heading-mobile lg:text-heading-desktop font-semibold text-white mb-4">
                         Popular courses of the week
                     </h2>
                     <p className="text-gray-300 text-xs lg:text-base font-light opacity-85">
@@ -98,6 +103,8 @@ const Courses = () => {
                     <img src={orangeCircle} className="absolute -top-4 md:top-0 right-20 w-4 h-4 md:w-7 md:h-7" alt="Orange Circle" />
                     <img src={orangeSquare} className="absolute -top-8 md:top-4 left-20 w-7 h-7 md:w-10 md:h-10" alt="Orange Square" />
                 </div>
+
+                {/* Slider Section */}
                 <div className='mx-0 lg:mx-32 px-0 lg:px-10 relative'>
                     <Slider ref={sliderRef} {...settings}>
                         {courses.map((course, index) => (
@@ -159,6 +166,8 @@ const Courses = () => {
                             </div>
                         ))}
                     </Slider>
+                    
+                    {/* Navigation Buttons */}
                     <div className="absolute inset-0 flex justify-between items-center px-4">
                         <button 
                             className="bg-white hover:bg-secondary border-4 p-4 rounded-full shadow-lg transition-all duration-300 group"

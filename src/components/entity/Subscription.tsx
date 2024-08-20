@@ -7,7 +7,7 @@ const Subscription = () => {
             name: "Base",
             price: "$50",
             duration: "1 month",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Perfect for beginners who want to explore the basics of various subjects.",
             features: [
                 "Access all videos",
                 "Get Certificate",
@@ -20,7 +20,7 @@ const Subscription = () => {
             name: "Pro",
             price: "$100",
             duration: "6 month",
-            description: "Lorem Ipsum is simply dummy text of the printing ",
+            description: "Ideal for those seeking in-depth knowledge.",
             mostPopular: true,
             features: [
                 "Access all videos",
@@ -34,7 +34,7 @@ const Subscription = () => {
             name: "Enterprise",
             price: "$200",
             duration: "12 month",
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            description: "Designed for professionals who require comprehensive learning resources.",
             features: [
                 "Access all videos",
                 "Get Certificate",
@@ -48,22 +48,26 @@ const Subscription = () => {
     return (
         <div className="bg-white py-20 font-poppins">
             <div className="container-custom">
+                
+                {/* Section Header */}
                 <div className="text-center mb-10 lg:mb-28">
-                    <h2 className="text-lg lg:text-4xl font-semibold mb-4">
+                    <h2 className="text-heading-mobile lg:text-heading-desktop font-semibold mb-4">
                         <span className='text-primary'>Subscribe</span> with us now
                     </h2>
                     <p className="text-gray-500 text-base px-10">
-                        by subscribing now you will be able to access the material easily and cheaply, 
+                        By subscribing now you will be able to access the material easily and cheaply, 
                         so you will be very efficient and benefit
                     </p>
                 </div>
+
+                {/* Subscription Plans */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 px-16 lg:px-60">
                     {plans.map((plan, index) => (
                         <div 
                             key={index} 
                             className={`p-8 rounded-3xl relative ${
                                 plan.mostPopular ? 
-                                'order-first lg:mb-0  mb-9 xl:order-none bg-secondary text-white lg:-translate-y-14 shadow-2xl shadow-emerald-800' : 
+                                'order-first lg:mb-0 mb-9 xl:order-none bg-secondary text-white lg:-translate-y-14 shadow-2xl shadow-emerald-800' : 
                                 'bg-white text-gray-800'
                             }`}
                         >

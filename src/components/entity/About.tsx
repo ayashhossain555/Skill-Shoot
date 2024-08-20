@@ -12,7 +12,10 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 const About = () => {
     return (
+        // Main container for the About section
         <div className="bg-white container-custom py-16 lg:py-24 flex flex-col lg:flex-row items-center font-poppins">
+            
+            {/* Image and Icons Section */}
             <div className="relative lg:w-1/2 hidden lg:flex justify-center items-end lg:justify-start lg:pr-10 mb-10 lg:mb-0">
                 <div className="relative">
                     <img src={aboutImage} alt="About Us" className="z-10 relative w-[408px] h-[570px]" />
@@ -33,8 +36,9 @@ const About = () => {
                 </div>
             </div>
 
+            {/* Text and Info Section */}
             <div className="lg:w-1/2 flex flex-col justify-center text-left gap-8 lg:gap-16">
-                <h2 className="text-xl md:text-3xl lg:text-5xl font-bold">
+                <h2 className="text-heading-mobile lg:text-heading-desktop font-bold">
                     Let us 
                     <span className="text-secondary relative ml-3">
                         Skill Shoot
@@ -46,30 +50,20 @@ const About = () => {
                     We have been around since 2019 with currently 100+ updated materials and 15K members who have joined.
                 </p>
                 <div className="grid grid-cols-2 gap-4 lg:gap-8">
-                    <div className="flex items-center">
-                        <div className='bg-primary bg-opacity-20 rounded-full p-2'>
-                            <FiUser className="text-primary w-6 h-6" />
+                    {/* Dynamic info boxes */}
+                    {[ 
+                        { icon: <FiUser />, text: "15K People Join" }, 
+                        { icon: <FiUserCheck />, text: "Trusted Mentor" }, 
+                        { icon: <BiVideoRecording />, text: "30+ Free Videos" }, 
+                        { icon: <FaRegCirclePlay />, text: "100+ Premium Videos" }
+                    ].map((item, index) => (
+                        <div className="flex items-center" key={index}>
+                            <div className='bg-primary bg-opacity-20 rounded-full p-2'>
+                                {item.icon}
+                            </div>
+                            <span className='text-xs lg:text-base font-bold ml-3'>{item.text}</span>
                         </div>
-                        <span className='text-xs lg:text-base font-bold ml-3'>15K People Join</span>
-                    </div>
-                    <div className="flex items-center">
-                        <div className='bg-primary bg-opacity-20 rounded-full p-2'>
-                            <FiUserCheck className="text-primary w-6 h-6" />
-                        </div>
-                        <span className='text-xs lg:text-base font-bold ml-3'>Trusted Mentor</span>
-                    </div>
-                    <div className="flex items-center">
-                        <div className='bg-primary bg-opacity-20 rounded-full p-2'>
-                            <BiVideoRecording className="text-primary w-6 h-6" />
-                        </div>
-                        <span className='text-xs lg:text-base font-bold ml-3'>30+ Free Videos</span>
-                    </div>
-                    <div className="flex items-center">
-                        <div className='bg-primary bg-opacity-20 rounded-full p-2'>
-                            <FaRegCirclePlay className="text-primary w-6 h-6" />
-                        </div>
-                        <span className='text-xs lg:text-base font-bold ml-3'>100+ Premium Videos</span>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
